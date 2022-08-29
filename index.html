@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>tip calculator</title>
+    
+  </head>
+  <body>
+    <main>
+        <h1>tip calculator</h1>
+      <div>
+        <label> Bill amount</label>
+        <input type="text" name="" id="bill_amount" />
+        <br />
+        <label>tip perc</label>
+        
+        <input type="text" name="" id="tip_perc" />
+        <br/>
+        <label>tip amount</label>
+        <input type="text" name="" id="tip_total" disabled />
+        <br />
+        <label>total billed</label>
+        <input type="text" name="" id="total_billed" disabled />
+        <br />
+        <button onclick="tipcalcy()"> calculate</button>
+
+        
+      </div>
+    </main>
+    <script>
+        const tipcalcy = () =>{
+            let amount = document.getElementById("bill_amount").value;
+            let perc = document.getElementById("tip_perc").value;
+            let tip = amount* (perc/100);
+            let total = tip + Number(amount);
+
+            document.getElementById("tip_total").value = tip;
+            document.getElementById("total_billed").value = total;
+        }
+    </script>
+  </body>
+</html>
